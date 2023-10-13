@@ -5,7 +5,7 @@
 // @match          *://*.bbc.com/news/*
 // @match          *://*.bbc.co.uk/news/*
 // @copyright      JJ Style
-// @version        0.0.1
+// @version        0.0.2
 // @license        GPLv3
 // ==/UserScript==
 
@@ -20,8 +20,9 @@
 
         // substitutions to make based on any of the keywords appearing in the article
         let subs = [
-            { from: 'militant(s)?', to: 'terrorist$1', keywords: ['hamas', 'gaza', 'israel']},
+            {from: 'militant(s)?', to: 'terrorist$1', keywords: ['hamas', 'gaza', 'israel']},
             {from: 'Militant(s)?', to: 'Terrorist$1', keywords: ['hamas', 'gaza', 'israel']},
+            {from: 'Hamas fighters', to: 'Hamas terrorists', keywords: ['hamas', 'gaza', 'israel']},
         ]
 
         // filter the substitutions to apply based on whether the keywords are in the article
